@@ -52,9 +52,9 @@ class RefreshMainDataWork(context: Context, params: WorkerParameters) : Worker(c
 
             try {
                 repository.refreshTitle()
-                Result.SUCCESS
+                Result.success()
             } catch (error: TitleRefreshError) {
-                Result.FAILURE
+                Result.failure()
             }
         }
     }
