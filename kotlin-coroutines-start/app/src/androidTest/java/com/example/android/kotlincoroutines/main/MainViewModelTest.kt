@@ -34,7 +34,7 @@ class MainViewModelTest {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    lateinit var subject: MainViewModel
+    private lateinit var subject: MainViewModel
 
     /**
      * Before the test runs initialize subject

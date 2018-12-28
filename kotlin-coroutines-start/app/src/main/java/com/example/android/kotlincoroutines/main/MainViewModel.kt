@@ -37,13 +37,13 @@ class MainViewModel : ViewModel() {
      * MutableLiveData allows anyone to set a value, and MainViewModel is the only
      * class that should be setting values.
      */
-    private val _snackBar = MutableLiveData<String>()
+    private val _snackbar = MutableLiveData<String>()
 
     /**
      * Request a snackbar to display a string.
      */
     val snackbar: LiveData<String>
-        get() = _snackBar
+        get() = _snackbar
 
     // TODO: Add viewModelJob and uiScope here
 
@@ -57,7 +57,7 @@ class MainViewModel : ViewModel() {
         BACKGROUND.submit {
             Thread.sleep(1_000)
             // use postValue since we're in a background thread
-            _snackBar.postValue("Hello, from threads!")
+            _snackbar.postValue("Hello, from threads!")
         }
     }
 
@@ -65,6 +65,6 @@ class MainViewModel : ViewModel() {
      * Called immediately after the UI shows the snackbar.
      */
     fun onSnackbarShown() {
-        _snackBar.value = null
+        _snackbar.value = null
     }
 }
