@@ -40,7 +40,7 @@ class MainViewModelTest {
      * Before the test runs initialize subject
      */
     @Before
-    fun setup() {
+    fun setUp() {
         subject = MainViewModel()
     }
 
@@ -48,8 +48,8 @@ class MainViewModelTest {
     fun whenMainViewModelClicked_showSnackbar() {
         runBlocking {
             subject.snackbar.captureValues {
-                subject.onMainViewClicked()
-                assertSendsValues(2_000, "Hello, from threads!")
+                subject.onMainViewClicked(0)
+                assertSendsValues(2_000, "Hello, from coroutines!")
             }
         }
     }

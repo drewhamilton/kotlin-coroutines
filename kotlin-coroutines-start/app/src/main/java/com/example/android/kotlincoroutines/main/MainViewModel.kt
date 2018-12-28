@@ -58,9 +58,9 @@ class MainViewModel : ViewModel() {
     /**
      * Wait one second then display a snackbar.
      */
-    fun onMainViewClicked() {
+    fun onMainViewClicked(delayMillis: Long = 1000) {
         uiScope.launch {
-            delay(1000)
+            delay(delayMillis)
             _snackbar.value = "Hello, from coroutines!"
         }
     }
